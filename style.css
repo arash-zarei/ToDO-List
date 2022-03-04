@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "fira sans", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todolist {
+  width: 360px;
+  height: 600px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 51px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 20px 0px #868383;
+  position: relative;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  top: 50px;
+  left: 20px;
+}
+
+.rang {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rang h5 {
+  position: relative;
+  left: -145px;
+  bottom: 5px;
+}
+
+.rang .reyl {
+  width: 90%;
+  height: 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 51px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 9px #aaaaaa inset, -5px -5px 9px #ffffff inset;
+  position: relative;
+  outline: 3px solid #f8f6f6;
+}
+
+.value {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-image: linear-gradient(to right, #ffa657, #e97d57);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.list-items {
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.item{
+  width: 95%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  border-radius: 24px;
+  background: #e0e0e0;
+  box-shadow: 9px 9px 17px #989898;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.item input[type="text"] {
+  background: none;
+  border: none;
+  outline: none;
+  color: #000;
+  font-size: 1rem;
+  position: relative;
+  left: 10px;
+}
+
+.item span{
+  width: 20px;
+  height: 20px;
+  border-radius: 7px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 9px #989898, -5px -5px 9px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item .remove{
+  color: crimson;
+}
+
+.item .edit {
+  color: green;
+}
+
+.item span:active{
+    box-shadow: 5px 5px 9px #989898 inset, -5px -5px 9px #ffffff inset;
+}
+
+.item .checkbox {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 7px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 9px #989898, -5px -5px 9px #ffffff;
+  cursor: pointer;
+  outline: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .checkbox::after{
+  font-family: FontAwesome;
+  content: "\f00c  ";
+  color: #aaaaaa;
+}
+
+.item .checkbox:checked::after {
+  font-family: FontAwesome;
+  content: "\f00c  ";
+  color: #e97d57;
+}
+
+.item .checkbox:checked {
+  box-shadow: 5px 5px 9px #989898 inset, -5px -5px 9px #ffffff inset;
+  outline: 2px solid #e97d57;
+}
+
+.addNode{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    border-radius: 0 0 20px 20px;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    -ms-border-radius: 0 0 20px 20px;
+    -o-border-radius: 0 0 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.addNode .added__text{
+    padding: 10px;
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: #e97d57;
+    box-shadow: 5px 5px 10px #989898;
+    border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    -ms-border-radius: 10px 0 0 10px;
+    -o-border-radius: 10px 0 0 10px;
+}
+
+.sub{
+    padding: 9px;
+    border-radius: 0 50% 50% 0;
+    -webkit-border-radius: 0 50% 50% 0;
+    -moz-border-radius: 0 50% 50% 0;
+    -ms-border-radius: 0 50% 50% 0;
+    -o-border-radius: 0 50% 50% 0;
+    border: none;
+    outline: none;
+    background-color: #ffa657;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #989898;
+}
